@@ -147,7 +147,7 @@
     </section> --}}
     
     @yield('content')
-    
+        
     <!-- include success message-->
     <div class="container col-lg-6 d-flex justify-content-center">
         @include('incs.messages')

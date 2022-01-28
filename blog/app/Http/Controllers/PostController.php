@@ -22,7 +22,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.posts');
+        $posts = $this->postRepository->posts();
+        return view('posts.posts')->with('posts', $posts);
     }
 
     /**

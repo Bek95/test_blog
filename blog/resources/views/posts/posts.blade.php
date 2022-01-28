@@ -11,14 +11,13 @@
             </div>
         </div> 
         <div class="row justify-content-center">
+            @if (!empty($posts))
+            @foreach ($posts as $post)
             <div class="col-lg-4 col-md-6">
                 <div class="single-blog mt-30">
-                    <div class="blog-image">
-                        <img src="assets/images/blog/b-1.jpg" alt="Blog">
-                    </div>
                     <div class="blog-content">
                         <div class="content">
-                            <h4 class="title"><a href="#">Rowan an orangutan known & loved</a></h4>
+                            <h4 class="title"><a href="#">{{ $post->title }}</a></h4>
                             <span>25 JULY, 2022</span>
                         </div>
                         <div class="meta d-flex justify-content-between align-items-center">
@@ -40,7 +39,13 @@
                     </div>
                 </div> 
             </div>
+            @endforeach
+            @endif
         </div> 
+        <div class="container col-lg-6 d-flex justify-content-center mt-3 mb-3">
+            {{ $posts->onEachSide(4)->links() }}
+        </div>
+        
     </div> 
 </section>
 @endsection
